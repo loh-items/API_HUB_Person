@@ -1,3 +1,5 @@
 {
-  "dependencies": []
+  "dependencies": [],
+  "name": "API_HUB_Person",
+  "main": "testDesignCenter.json"
 }
