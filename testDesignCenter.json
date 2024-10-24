@@ -1,0 +1,1929 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Service for namespace com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001",
+        "description": "This service is located at [https://localhost/service-root/](https://localhost/service-root/)",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://localhost/service-root"
+        }
+    ],
+    "tags": [
+        {
+            "name": "PersonAdresseSet"
+        },
+        {
+            "name": "PersonAFSet"
+        },
+        {
+            "name": "PersonSet"
+        }
+    ],
+    "paths": {
+        "/PersonAdresseSet": {
+            "get": {
+                "summary": "Get entities from PersonAdresseSet",
+                "tags": [
+                    "PersonAdresseSet"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "personNumber",
+                                    "personNumber desc",
+                                    "addressId",
+                                    "addressId desc",
+                                    "landescode",
+                                    "landescode desc",
+                                    "postleitzahl",
+                                    "postleitzahl desc",
+                                    "ort",
+                                    "ort desc",
+                                    "ortsteil",
+                                    "ortsteil desc",
+                                    "strasse",
+                                    "strasse desc",
+                                    "hausnummer",
+                                    "hausnummer desc",
+                                    "postfach",
+                                    "postfach desc",
+                                    "coErgaenzung",
+                                    "coErgaenzung desc",
+                                    "SAP__Messages/code",
+                                    "SAP__Messages/code desc",
+                                    "SAP__Messages/message",
+                                    "SAP__Messages/message desc",
+                                    "SAP__Messages/target",
+                                    "SAP__Messages/target desc",
+                                    "SAP__Messages/additionalTargets",
+                                    "SAP__Messages/additionalTargets desc",
+                                    "SAP__Messages/transition",
+                                    "SAP__Messages/transition desc",
+                                    "SAP__Messages/numericSeverity",
+                                    "SAP__Messages/numericSeverity desc",
+                                    "SAP__Messages/longtextUrl",
+                                    "SAP__Messages/longtextUrl desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "personNumber",
+                                    "addressId",
+                                    "landescode",
+                                    "postleitzahl",
+                                    "ort",
+                                    "ortsteil",
+                                    "strasse",
+                                    "hausnummer",
+                                    "postfach",
+                                    "coErgaenzung",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Person"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/apply"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Collection of PersonAdresse",
+                                    "properties": {
+                                        "@odata.count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonAdresseSet/{personNumber}/{addressId}": {
+            "parameters": [
+                {
+                    "description": "key: personNumber",
+                    "in": "path",
+                    "name": "personNumber",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                },
+                {
+                    "description": "key: addressId",
+                    "in": "path",
+                    "name": "addressId",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from PersonAdresseSet by key",
+                "tags": [
+                    "PersonAdresseSet"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "personNumber",
+                                    "addressId",
+                                    "landescode",
+                                    "postleitzahl",
+                                    "ort",
+                                    "ortsteil",
+                                    "strasse",
+                                    "hausnummer",
+                                    "postfach",
+                                    "coErgaenzung",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Person"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in PersonAdresseSet",
+                "tags": [
+                    "PersonAdresseSet"
+                ],
+                "requestBody": {
+                    "description": "New property values",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonAdresseSet/{personNumber}/{addressId}/Person": {
+            "parameters": [
+                {
+                    "description": "key: personNumber",
+                    "in": "path",
+                    "name": "personNumber",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                },
+                {
+                    "description": "key: addressId",
+                    "in": "path",
+                    "name": "addressId",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get related Person",
+                "tags": [
+                    "PersonAdresseSet",
+                    "PersonSet"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "_id",
+                                    "individuelleAnrede",
+                                    "anrede",
+                                    "vorname",
+                                    "nachname",
+                                    "geburtsdatum",
+                                    "titel",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "zusatzAttribute",
+                                    "adresse"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonAFSet": {
+            "get": {
+                "summary": "Get entities from PersonAFSet",
+                "tags": [
+                    "PersonAFSet"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "name",
+                                    "name desc",
+                                    "wert",
+                                    "wert desc",
+                                    "SAP__Messages/code",
+                                    "SAP__Messages/code desc",
+                                    "SAP__Messages/message",
+                                    "SAP__Messages/message desc",
+                                    "SAP__Messages/target",
+                                    "SAP__Messages/target desc",
+                                    "SAP__Messages/additionalTargets",
+                                    "SAP__Messages/additionalTargets desc",
+                                    "SAP__Messages/transition",
+                                    "SAP__Messages/transition desc",
+                                    "SAP__Messages/numericSeverity",
+                                    "SAP__Messages/numericSeverity desc",
+                                    "SAP__Messages/longtextUrl",
+                                    "SAP__Messages/longtextUrl desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "name",
+                                    "wert",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Person"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/apply"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Collection of ZusatzAttribute",
+                                    "properties": {
+                                        "@odata.count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonAFSet/{name}": {
+            "parameters": [
+                {
+                    "description": "key: name",
+                    "in": "path",
+                    "name": "name",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 30
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from PersonAFSet by key",
+                "tags": [
+                    "PersonAFSet"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "name",
+                                    "wert",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Person"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in PersonAFSet",
+                "tags": [
+                    "PersonAFSet"
+                ],
+                "requestBody": {
+                    "description": "New property values",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonAFSet/{name}/Person": {
+            "parameters": [
+                {
+                    "description": "key: name",
+                    "in": "path",
+                    "name": "name",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 30
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get related Person",
+                "tags": [
+                    "PersonAFSet",
+                    "PersonSet"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "_id",
+                                    "individuelleAnrede",
+                                    "anrede",
+                                    "vorname",
+                                    "nachname",
+                                    "geburtsdatum",
+                                    "titel",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "zusatzAttribute",
+                                    "adresse"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonSet": {
+            "get": {
+                "summary": "Get entities from PersonSet",
+                "tags": [
+                    "PersonSet"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "_id",
+                                    "_id desc",
+                                    "individuelleAnrede",
+                                    "individuelleAnrede desc",
+                                    "vorname",
+                                    "vorname desc",
+                                    "nachname",
+                                    "nachname desc",
+                                    "geburtsdatum",
+                                    "geburtsdatum desc",
+                                    "titel",
+                                    "titel desc",
+                                    "SAP__Messages/code",
+                                    "SAP__Messages/code desc",
+                                    "SAP__Messages/message",
+                                    "SAP__Messages/message desc",
+                                    "SAP__Messages/target",
+                                    "SAP__Messages/target desc",
+                                    "SAP__Messages/additionalTargets",
+                                    "SAP__Messages/additionalTargets desc",
+                                    "SAP__Messages/transition",
+                                    "SAP__Messages/transition desc",
+                                    "SAP__Messages/numericSeverity",
+                                    "SAP__Messages/numericSeverity desc",
+                                    "SAP__Messages/longtextUrl",
+                                    "SAP__Messages/longtextUrl desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "_id",
+                                    "individuelleAnrede",
+                                    "anrede",
+                                    "vorname",
+                                    "nachname",
+                                    "geburtsdatum",
+                                    "titel",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "zusatzAttribute",
+                                    "adresse"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/apply"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Collection of Person",
+                                    "properties": {
+                                        "@odata.count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to PersonSet",
+                "tags": [
+                    "PersonSet"
+                ],
+                "requestBody": {
+                    "description": "New entity",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonSet/{_id}": {
+            "parameters": [
+                {
+                    "description": "key: _id",
+                    "in": "path",
+                    "name": "_id",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entity from PersonSet by key",
+                "tags": [
+                    "PersonSet"
+                ],
+                "parameters": [
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "_id",
+                                    "individuelleAnrede",
+                                    "anrede",
+                                    "vorname",
+                                    "nachname",
+                                    "geburtsdatum",
+                                    "titel",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "zusatzAttribute",
+                                    "adresse"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Update entity in PersonSet",
+                "tags": [
+                    "PersonSet"
+                ],
+                "requestBody": {
+                    "description": "New property values",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person-update"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonSet/{_id}/zusatzAttribute": {
+            "parameters": [
+                {
+                    "description": "key: _id",
+                    "in": "path",
+                    "name": "_id",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entities from related zusatzAttribute",
+                "tags": [
+                    "PersonSet",
+                    "PersonAFSet"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "name",
+                                    "name desc",
+                                    "wert",
+                                    "wert desc",
+                                    "SAP__Messages/code",
+                                    "SAP__Messages/code desc",
+                                    "SAP__Messages/message",
+                                    "SAP__Messages/message desc",
+                                    "SAP__Messages/target",
+                                    "SAP__Messages/target desc",
+                                    "SAP__Messages/additionalTargets",
+                                    "SAP__Messages/additionalTargets desc",
+                                    "SAP__Messages/transition",
+                                    "SAP__Messages/transition desc",
+                                    "SAP__Messages/numericSeverity",
+                                    "SAP__Messages/numericSeverity desc",
+                                    "SAP__Messages/longtextUrl",
+                                    "SAP__Messages/longtextUrl desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "name",
+                                    "wert",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Person"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/apply"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Collection of ZusatzAttribute",
+                                    "properties": {
+                                        "@odata.count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to related zusatzAttribute",
+                "tags": [
+                    "PersonSet",
+                    "PersonAFSet"
+                ],
+                "requestBody": {
+                    "description": "New entity",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/PersonSet/{_id}/adresse": {
+            "parameters": [
+                {
+                    "description": "key: _id",
+                    "in": "path",
+                    "name": "_id",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                }
+            ],
+            "get": {
+                "summary": "Get entities from related adresse",
+                "tags": [
+                    "PersonSet",
+                    "PersonAdresseSet"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/top"
+                    },
+                    {
+                        "$ref": "#/components/parameters/skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "personNumber",
+                                    "personNumber desc",
+                                    "addressId",
+                                    "addressId desc",
+                                    "landescode",
+                                    "landescode desc",
+                                    "postleitzahl",
+                                    "postleitzahl desc",
+                                    "ort",
+                                    "ort desc",
+                                    "ortsteil",
+                                    "ortsteil desc",
+                                    "strasse",
+                                    "strasse desc",
+                                    "hausnummer",
+                                    "hausnummer desc",
+                                    "postfach",
+                                    "postfach desc",
+                                    "coErgaenzung",
+                                    "coErgaenzung desc",
+                                    "SAP__Messages/code",
+                                    "SAP__Messages/code desc",
+                                    "SAP__Messages/message",
+                                    "SAP__Messages/message desc",
+                                    "SAP__Messages/target",
+                                    "SAP__Messages/target desc",
+                                    "SAP__Messages/additionalTargets",
+                                    "SAP__Messages/additionalTargets desc",
+                                    "SAP__Messages/transition",
+                                    "SAP__Messages/transition desc",
+                                    "SAP__Messages/numericSeverity",
+                                    "SAP__Messages/numericSeverity desc",
+                                    "SAP__Messages/longtextUrl",
+                                    "SAP__Messages/longtextUrl desc"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "personNumber",
+                                    "addressId",
+                                    "landescode",
+                                    "postleitzahl",
+                                    "ort",
+                                    "ortsteil",
+                                    "strasse",
+                                    "hausnummer",
+                                    "postfach",
+                                    "coErgaenzung",
+                                    "SAP__Messages"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "*",
+                                    "Person"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/apply"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "title": "Collection of PersonAdresse",
+                                    "properties": {
+                                        "@odata.count": {
+                                            "$ref": "#/components/schemas/count"
+                                        },
+                                        "value": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Add new entity to related adresse",
+                "tags": [
+                    "PersonSet",
+                    "PersonAdresseSet"
+                ],
+                "requestBody": {
+                    "description": "New entity",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse-create"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse"
+                                }
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        },
+        "/$batch": {
+            "post": {
+                "summary": "Send a group of requests",
+                "description": "Group multiple requests into a single request payload, see [Batch Requests](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_BatchRequests).\n\n*Please note that \"Try it out\" is not supported for this request.*",
+                "tags": [
+                    "Batch Requests"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "description": "Batch request",
+                    "content": {
+                        "multipart/mixed;boundary=request-separator": {
+                            "schema": {
+                                "type": "string"
+                            },
+                            "example": "--request-separator\nContent-Type: application/http\nContent-Transfer-Encoding: binary\n\nGET PersonAdresseSet HTTP/1.1\nAccept: application/json\n\n\n--request-separator--"
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Batch response",
+                        "content": {
+                            "multipart/mixed": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "--response-separator\nContent-Type: application/http\n\nHTTP/1.1 200 OK\nContent-Type: application/json\n\n{...}\n--response-separator--"
+                            }
+                        }
+                    },
+                    "4XX": {
+                        "$ref": "#/components/responses/error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person": {
+                "title": "Person",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "individuelleAnrede": {
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    "anrede": {
+                        "type": "string",
+                        "maxLength": 24
+                    },
+                    "vorname": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "nachname": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "geburtsdatum": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2017-04-13",
+                        "nullable": true
+                    },
+                    "titel": {
+                        "type": "string",
+                        "maxLength": 4
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message"
+                        }
+                    },
+                    "zusatzAttribute": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute"
+                        }
+                    },
+                    "zusatzAttribute@odata.count": {
+                        "$ref": "#/components/schemas/count"
+                    },
+                    "adresse": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse"
+                        }
+                    },
+                    "adresse@odata.count": {
+                        "$ref": "#/components/schemas/count"
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person-create": {
+                "title": "Person (for create)",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "individuelleAnrede": {
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    "anrede": {
+                        "type": "string",
+                        "maxLength": 24
+                    },
+                    "vorname": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "nachname": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "geburtsdatum": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2017-04-13",
+                        "nullable": true
+                    },
+                    "titel": {
+                        "type": "string",
+                        "maxLength": 4
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-create"
+                        }
+                    }
+                },
+                "required": [
+                    "_id"
+                ]
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person-update": {
+                "title": "Person (for update)",
+                "type": "object",
+                "properties": {
+                    "individuelleAnrede": {
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    "anrede": {
+                        "type": "string",
+                        "maxLength": 24
+                    },
+                    "vorname": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "nachname": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "geburtsdatum": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2017-04-13",
+                        "nullable": true
+                    },
+                    "titel": {
+                        "type": "string",
+                        "maxLength": 4
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-update"
+                        }
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse": {
+                "title": "PersonAdresse",
+                "type": "object",
+                "properties": {
+                    "personNumber": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "addressId": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "landescode": {
+                        "type": "string",
+                        "maxLength": 3
+                    },
+                    "postleitzahl": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "ort": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "ortsteil": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "strasse": {
+                        "type": "string",
+                        "maxLength": 60
+                    },
+                    "hausnummer": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "postfach": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "coErgaenzung": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message"
+                        }
+                    },
+                    "Person": {
+                        "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse-create": {
+                "title": "PersonAdresse (for create)",
+                "type": "object",
+                "properties": {
+                    "landescode": {
+                        "type": "string",
+                        "maxLength": 3
+                    },
+                    "postleitzahl": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "ort": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "ortsteil": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "strasse": {
+                        "type": "string",
+                        "maxLength": 60
+                    },
+                    "hausnummer": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "postfach": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "coErgaenzung": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-create"
+                        }
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.PersonAdresse-update": {
+                "title": "PersonAdresse (for update)",
+                "type": "object",
+                "properties": {
+                    "landescode": {
+                        "type": "string",
+                        "maxLength": 3
+                    },
+                    "postleitzahl": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "ort": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "ortsteil": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "strasse": {
+                        "type": "string",
+                        "maxLength": 60
+                    },
+                    "hausnummer": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "postfach": {
+                        "type": "string",
+                        "maxLength": 10
+                    },
+                    "coErgaenzung": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-update"
+                        }
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message": {
+                "title": "SAP__Message",
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "target": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additionalTargets": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "transition": {
+                        "type": "boolean"
+                    },
+                    "numericSeverity": {
+                        "type": "integer",
+                        "format": "uint8"
+                    },
+                    "longtextUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-create": {
+                "title": "SAP__Message (for create)",
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "target": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additionalTargets": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "transition": {
+                        "type": "boolean"
+                    },
+                    "numericSeverity": {
+                        "type": "integer",
+                        "format": "uint8"
+                    },
+                    "longtextUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-update": {
+                "title": "SAP__Message (for update)",
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "target": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "additionalTargets": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "transition": {
+                        "type": "boolean"
+                    },
+                    "numericSeverity": {
+                        "type": "integer",
+                        "format": "uint8"
+                    },
+                    "longtextUrl": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute": {
+                "title": "ZusatzAttribute",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 30
+                    },
+                    "wert": {
+                        "type": "string",
+                        "maxLength": 30
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message"
+                        }
+                    },
+                    "Person": {
+                        "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.Person"
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute-create": {
+                "title": "ZusatzAttribute (for create)",
+                "type": "object",
+                "properties": {
+                    "wert": {
+                        "type": "string",
+                        "maxLength": 30
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-create"
+                        }
+                    },
+                    "Person@odata.bind": {
+                        "$ref": "#/components/schemas/entityReference"
+                    }
+                }
+            },
+            "com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.ZusatzAttribute-update": {
+                "title": "ZusatzAttribute (for update)",
+                "type": "object",
+                "properties": {
+                    "wert": {
+                        "type": "string",
+                        "maxLength": 30
+                    },
+                    "SAP__Messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001.SAP__Message-update"
+                        }
+                    }
+                }
+            },
+            "count": {
+                "anyOf": [
+                    {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    {
+                        "type": "string"
+                    }
+                ],
+                "description": "The number of entities in the collection. Available when using the [$count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount) query option."
+            },
+            "entityReference": {
+                "type": "string",
+                "format": "uri",
+                "description": "[Link to a related entity](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_LinktoRelatedEntitiesWhenCreatinganE)"
+            },
+            "error": {
+                "type": "object",
+                "required": [
+                    "error"
+                ],
+                "properties": {
+                    "error": {
+                        "type": "object",
+                        "required": [
+                            "code",
+                            "message"
+                        ],
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "target": {
+                                "type": "string"
+                            },
+                            "details": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "code",
+                                        "message"
+                                    ],
+                                    "properties": {
+                                        "code": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "target": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "innererror": {
+                                "type": "object",
+                                "description": "The structure of this object is service-specific"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "top": {
+                "name": "$top",
+                "in": "query",
+                "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+                "schema": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "example": 50
+            },
+            "skip": {
+                "name": "$skip",
+                "in": "query",
+                "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+                "schema": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "count": {
+                "name": "$count",
+                "in": "query",
+                "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+                "schema": {
+                    "type": "boolean"
+                }
+            },
+            "search": {
+                "name": "$search",
+                "in": "query",
+                "description": "Search items by search phrases, see [Searching](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionsearch)",
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "apply": {
+                "name": "$apply",
+                "in": "query",
+                "description": "Apply basic grouping and aggregation functionality, see [Aggregation](http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/odata-data-aggregation-ext-v4.0.html)",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        },
+        "responses": {
+            "error": {
+                "description": "Error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/error"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
