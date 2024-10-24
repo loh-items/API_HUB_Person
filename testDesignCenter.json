@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.2",
     "info": {
-        "title": "Service for namespace com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001",
+        "title": "Service for blabla com.sap.gateway.srvd_a2x.b4u.api_bo4e_person.v0001",
         "description": "This service is located at [https://localhost/service-root/](https://localhost/service-root/)",
         "version": "1.0.0"
     },
